@@ -1,6 +1,6 @@
 {
   "name": "line-length-index",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Used by Atom to keep track of the row with the longest line length.",
   "main": "dist/line-length-index.js",
   "scripts": {
