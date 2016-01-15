@@ -52,6 +52,15 @@ export default class LineLengthIndex {
     }
   }
 
+  lineLengthForRow (row) {
+    let node = this.iterator.findNode(row)
+    if (node) {
+      return node.lineLength
+    } else {
+      return null
+    }
+  }
+
   getPointWithMaxLineLength () {
     return this.iterator.getPointWithMaxLineLength()
   }

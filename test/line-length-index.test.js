@@ -13,7 +13,7 @@ describe('LineLengthIndex', () => {
       let referenceLineLengths = generateRandomLineLengths(random, 10)
       lineLengthsIndex.splice(0, 0, referenceLineLengths)
 
-      for (let j = 0; j < 300; j++) {
+      for (let j = 0; j < 50; j++) {
         let start = random(referenceLineLengths.length)
         let replacedExtent = random(referenceLineLengths.length - start)
         let replacementLineLengths = generateRandomLineLengths(random, 10)
@@ -32,6 +32,9 @@ function verifyLineLengthIndex (lineLengthsIndex, referenceLineLengths) {
   let rowsWithMaxLineLength = new Set
   for (let row = 0; row < referenceLineLengths.length; row++) {
     let lineLength = referenceLineLengths[row]
+
+    assert.equal(lineLengthsIndex.lineLengthForRow(row), lineLength)
+
     if (lineLength > maxLineLength) {
       maxLineLength = lineLength
       rowsWithMaxLineLength.clear()
